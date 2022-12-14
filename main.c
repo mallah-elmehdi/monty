@@ -41,7 +41,7 @@ void push(int lineInt, sstack_t **stack_head)
 	char *value = NULL;
 
 	value = strtok(NULL, " ");
-	if (value == NULL || atoi(value) < 0)
+	if (value == NULL || (atoi(value) == 0 && strcmp(value, "0") != 0))
 	{
 		dprintf(2, "L%d: usage: push integer\n", lineInt);
 		exit(EXIT_FAILURE);
