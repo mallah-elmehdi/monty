@@ -30,6 +30,8 @@ void read_file(FILE *fp, sstack_t **stack_head)
 				pall_stack(*stack_head);
 			else if (instruction && strcmp(instruction, "pint") == 0)
 				pint_stack(fp, lineInt, *stack_head);
+			else if (instruction && strcmp(instruction, "pop") == 0)
+				pop_stack(fp, lineInt, *stack_head);
 			else
 			{
 				dprintf(2, "L%d: unknown instruction %s\n", lineInt, instruction);
