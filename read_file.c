@@ -28,6 +28,8 @@ void read_file(FILE *fp, sstack_t **stack_head)
 				push_node_stack(fp, lineInt, stack_head);
 			else if (instruction && strcmp(instruction, "pall") == 0)
 				pall_stack(*stack_head);
+			else if (instruction && strcmp(instruction, "pint") == 0)
+				pint_stack(fp, lineInt, *stack_head);
 			else
 			{
 				dprintf(2, "L%d: unknown instruction %s\n", lineInt, instruction);
