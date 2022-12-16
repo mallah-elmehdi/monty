@@ -8,7 +8,7 @@
  */
 void pop_stack(FILE *fp, int lineInt, sstack_t **stack_head)
 {
-	if (stack_head == NULL)
+	if (*stack_head == NULL)
 	{
 		dprintf(2, "L%d: can't pop an empty stack\n", lineInt);
 		fclose(fp);
