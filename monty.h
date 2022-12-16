@@ -43,5 +43,6 @@ void push_node_stack(FILE *fp, int lineInt, sstack_t **stack_head);
 void read_file(FILE *fp, sstack_t **stack_head);
 void monty(FILE *fp, sstack_t **stack_head);
 int is_int(char *s);
+char *trimwhitespace(char *str);
 
 #endif

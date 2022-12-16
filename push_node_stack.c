@@ -12,7 +12,7 @@ void push_node_stack(FILE *fp, int lineInt, sstack_t **stack_head)
 {
 	char *value = NULL;
 
-	value = strtok(NULL, "\n");
+	value = trimwhitespace(strtok(NULL, "\n"));
 	if (value == NULL || is_int(value) == 0)
 	{
 		dprintf(2, "L%d: usage: push integer\n", lineInt);
