@@ -14,6 +14,7 @@ sstack_t *add_node_stack(sstack_t **head, const int n)
 	if (new == NULL)
 	{
 		dprintf(2, "Error: malloc failed\n");
+		free_stack(*head);
 		exit(EXIT_FAILURE);
 	}
 	new->prev = NULL;
