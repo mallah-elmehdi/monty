@@ -17,7 +17,8 @@ void read_file(FILE *fp, sstack_t **stack_head)
 
 	while ((read = getline(&line, &len, fp)) != -1)
 	{
-		line[strlen(line) - 1] = 0;
+		if (line[strlen(line) - 1] == '\n')
+			line[strlen(line) - 1] = 0;
 		if (strlen(line) > 0)
 		{
 			instruction = strtok(line, " ");
