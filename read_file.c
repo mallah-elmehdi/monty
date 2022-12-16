@@ -10,13 +10,15 @@
 void read_file(FILE *fp, sstack_t **stack_head)
 {
 	char *line = NULL;
+	char *line_2 = NULL;
 	char *instruction = NULL;
 	ssize_t read;
 	size_t len = 0;
 	int lineInt = 1;
 
-	while ((read = getline(&line, &len, fp)) != -1)
+	while ((read = getline(&line_2, &len, fp)) != -1)
 	{
+		line = trimwhitespace(line_2);
 		if (line[strlen(line) - 1] == '\n')
 			line[strlen(line) - 1] = 0;
 		if (strlen(line) > 0)
@@ -36,6 +38,6 @@ void read_file(FILE *fp, sstack_t **stack_head)
 		}
 		lineInt++;
 	}
-	if (line)
-		free(line);
+	if (line_2)
+		free(line_2);
 }
