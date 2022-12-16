@@ -6,7 +6,7 @@
  *
  * Return: void.
  */
-void pop_stack(FILE *fp, int lineInt, sstack_t *stack_head)
+void pop_stack(FILE *fp, int lineInt, sstack_t **stack_head)
 {
 	if (stack_head == NULL)
 	{
@@ -14,5 +14,5 @@ void pop_stack(FILE *fp, int lineInt, sstack_t *stack_head)
 		fclose(fp);
 		exit(EXIT_FAILURE);
 	}
-	delete_dnodeint_at_index(&stack_head, 0);
+	delete_dnodeint_at_index(stack_head, 0);
 }

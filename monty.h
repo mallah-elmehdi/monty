@@ -45,7 +45,7 @@ void monty(FILE *fp, sstack_t **stack_head);
 int is_int(char *s);
 char *trimwhitespace(char *str);
 void pint_stack(FILE *fp, int lineInt, sstack_t *stack_head);
-void pop_stack(FILE *fp, int lineInt, sstack_t *stack_head);
+void pop_stack(FILE *fp, int lineInt, sstack_t **stack_head);
 int delete_dnodeint_at_index(sstack_t **head, unsigned int index);
 
 #endif
