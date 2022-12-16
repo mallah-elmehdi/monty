@@ -35,4 +35,12 @@ typedef struct instruction_s
 	void (*f)(sstack_t **stack, unsigned int line_number);
 } instruction_t;
 
+
+sstack_t *add_node_stack(sstack_t **head, const int n);
+void free_stack(sstack_t *head);
+void pall_stack(sstack_t *stack_head);
+void push_node_stack(FILE *fp, int lineInt, sstack_t **stack_head);
+void read_file(FILE *fp, sstack_t **stack_head);
+void monty(FILE *fp, sstack_t **stack_head);
+
 #endif
